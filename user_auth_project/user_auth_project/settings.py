@@ -57,6 +57,8 @@ REST_FRAMEWORK = {
     ),
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
     ),
 }
 
@@ -168,6 +170,6 @@ AUTH_USER_MODEL = 'auth_app.CustomUser'
 
 LOGIN_URL = '/login/'
 LOGOUT_URL = '/logout/'
-LOGIN_REDIRECT_URL = '/'  # Redirect after successful login
+LOGIN_REDIRECT_URL = '/api/google-login/'  # Redirect after successful login
 LOGOUT_REDIRECT_URL = '/'
 SOCIAL_AUTH_STATE = True
